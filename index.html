@@ -50,16 +50,21 @@
       line-height: 1.4;
       color: #f1f5f9;
     }
+    .features, .platform-badges, ol, .badge-row, .cta, .social-proof {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease;
+    }
+    .features.visible, .platform-badges.visible, ol.visible, .badge-row.visible, .cta.visible, .social-proof.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
     .features {
       display: grid;
       grid-template-columns: repeat(2,1fr);
       gap: 14px;
       margin: 20px 32px;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.8s ease;
     }
-    .features.visible { opacity: 1; transform: translateY(0); }
     .feature {
       background: #f1f5f9;
       padding: 12px;
@@ -76,11 +81,7 @@
       gap: 12px;
       margin: 0 32px 16px 32px;
       flex-wrap: wrap;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.8s ease;
     }
-    .platform-badges.visible { opacity: 1; transform: translateY(0); }
     .platform-badges div {
       background: #e2e8f0;
       padding: 6px 12px;
@@ -91,13 +92,10 @@
     .platform-badges div:hover { transform: scale(1.05); }
     ol {
       margin-top: 0;
-      padding-left: 40px;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.8s ease;
+      padding-left: 50px; /* Shifted right */
     }
-    ol.visible { opacity: 1; transform: translateY(0); }
     ol li { margin-bottom: 10px; }
+    h2 { margin-left: 50px; } /* Quick Steps header aligned with list */
     .badge-row {
       display: flex;
       gap: 12px;
@@ -105,11 +103,7 @@
       margin-left: 32px;
       margin-right: 32px;
       flex-wrap: wrap;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.8s ease;
     }
-    .badge-row.visible { opacity: 1; transform: translateY(0); }
     .badge-row div {
       background:#f1f5f9;
       padding:6px 12px;
@@ -123,11 +117,7 @@
       gap: 12px;
       align-items: center;
       margin: 24px 32px;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.8s ease;
     }
-    .cta.visible { opacity: 1; transform: translateY(0); }
     .btn {
       padding: 14px 18px;
       border-radius: 10px;
@@ -165,12 +155,7 @@
       font-size: 0.9rem;
       color: #64748b;
       margin: 16px 32px 32px 32px;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.8s ease;
     }
-    .social-proof.visible { opacity: 1; transform: translateY(0); }
-
     @media(max-width:520px){
       h1 { font-size: 1.6rem; }
       p.lead { font-size: 0.95rem; }
@@ -179,7 +164,8 @@
       .badge-row { margin: 12px; gap: 10px; }
       .cta { margin: 16px; justify-content: center; }
       p, footer, .social-proof { margin-left:16px; margin-right:16px; font-size: 0.85rem; }
-      ol { padding-left: 30px; font-size: 0.95rem; }
+      ol { padding-left: 35px; font-size: 0.95rem; }
+      h2 { margin-left: 35px; }
       .btn { padding: 12px 16px; font-size: 0.95rem; }
     }
   </style>
@@ -233,9 +219,11 @@
 
   <script>
     const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
+      entries.forEach((entry, index) => {
         if(entry.isIntersecting){
-          entry.target.classList.add('visible');
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, index * 150); // stagger fade-in 150ms
           observer.unobserve(entry.target);
         }
       });
