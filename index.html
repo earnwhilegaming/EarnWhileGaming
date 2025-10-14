@@ -7,7 +7,7 @@
   <style>
     :root {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;
-      line-height: 1.4;
+      line-height: 1.5;
     }
     body {
       margin: 0;
@@ -24,12 +24,13 @@
       background: #fff;
       border-radius: 16px;
       box-shadow: 0 8px 30px rgba(2,6,23,0.08);
-      padding: 28px;
+      padding: 32px;
     }
     header {
       display: flex;
       gap: 16px;
       align-items: center;
+      margin-bottom: 16px;
     }
     .logo {
       width: 64px;
@@ -41,9 +42,10 @@
       justify-content: center;
       color: #fff;
       font-weight: 700;
+      font-size: 1.2rem;
     }
     h1 {
-      font-size: 1.6rem;
+      font-size: 1.7rem;
       margin: 0;
     }
     p.lead {
@@ -56,17 +58,17 @@
       align-items: center;
       font-size: 0.9rem;
       color: #64748b;
-      margin-top: 0;
+      margin-top: 8px;
     }
     .features {
       display: grid;
       grid-template-columns: repeat(2,1fr);
-      gap: 12px;
-      margin: 12px 0;
+      gap: 14px;
+      margin: 20px 0;
     }
     .feature {
       background: #f1f5f9;
-      padding: 10px;
+      padding: 12px;
       border-radius: 8px;
       font-size: 0.95rem;
     }
@@ -74,6 +76,7 @@
       display: flex;
       gap: 12px;
       margin-top: 12px;
+      flex-wrap: wrap;
     }
     .platform-badges div {
       background: #e2e8f0;
@@ -85,10 +88,10 @@
       display: flex;
       gap: 12px;
       align-items: center;
-      margin-top: 18px;
+      margin-top: 24px;
     }
     .btn {
-      padding: 12px 16px;
+      padding: 14px 18px;
       border-radius: 10px;
       border: 0;
       font-weight: 600;
@@ -99,6 +102,7 @@
     .primary {
       background: #0ea5a3;
       color: white;
+      font-size: 1rem;
     }
     .primary:hover {
       background: #0c9898;
@@ -107,25 +111,21 @@
       background: transparent;
       border: 1px solid #e2e8f0;
     }
-    footer {
-      font-size: 0.85rem;
-      color: #64748b;
-      margin-top: 18px;
-    }
     hr {
-      margin: 18px 0;
+      margin: 24px 0;
       border: none;
       border-top: 1px solid #eef2f7;
+    }
+    ol {
+      margin-top: 0;
+      padding-left: 20px;
+    }
+    ol li {
+      margin-bottom: 10px;
     }
     @media(max-width:520px){
       .features {
         grid-template-columns: 1fr;
-      }
-      .platform-badges {
-        flex-wrap: wrap;
-      }
-      .trust-row {
-        flex-wrap: wrap;
       }
     }
   </style>
@@ -136,13 +136,13 @@
       <div class="logo">EWG</div>
       <div>
         <h1>Play Games. Earn Cash. It’s That Simple.</h1>
-        <p class="lead">Discover new games and apps — earn cash you can withdraw via gift cards, crypto, or PayPal rewards for short play sessions.</p>
+        <p class="lead">Discover new games and apps — earn cash you can withdraw via gift cards, crypto, or PayPal for short play sessions.</p>
       </div>
     </header>
 
     <!-- Trust / Social Proof -->
     <div class="trust-row">
-      ✅ Trusted by 500,000+ players
+      ✅ Trusted by 500,000+ players worldwide
     </div>
 
     <!-- Platform badges -->
@@ -153,34 +153,34 @@
     </div>
 
     <div class="features">
-      <div class="feature">Free to join — works on Android, iOS & PC</div>
-      <div class="feature">Fast withdrawals — gift cards, PayPal & crypto</div>
+      <div class="feature">Free to join — works on all devices</div>
+      <div class="feature">Fast cash withdrawals — gift cards, PayPal & crypto</div>
       <div class="feature">No experience required</div>
-      <div class="feature">Perfect for students & casual gamers</div>
+      <div class="feature">Ideal for students & casual gamers</div>
     </div>
 
-    <p>How it works: install a game, play for a short time, and complete simple tasks. You earn cash that can be withdrawn via gift cards, crypto, or PayPal rewards. Detailed instructions appear after you click below.</p>
+    <p>How it works: install a game, play for a short time, and complete simple tasks. Earn cash that can be withdrawn via gift cards, crypto, or PayPal. Detailed instructions appear after you click below.</p>
 
     <hr>
 
     <section id="how">
-      <h2 style="margin-top:18px">Quick Steps</h2>
-      <ol style="margin-top:0;">
+      <h2>Quick Steps</h2>
+      <ol>
         <li>📥 Click "Start Playing Now" → select & install a game</li>
         <li>🎮 Open the game and play 5–15 minutes</li>
         <li>🏆 Complete 1–2 simple tasks (watch an ad, reach level 1)</li>
-        <li>🎁 Claim your cash in the app — withdraw via gift cards, crypto, or PayPal rewards</li>
+        <li>🎁 Claim your cash in the app — withdraw via gift cards, crypto, or PayPal</li>
       </ol>
 
-      <!-- Additional badges for credibility -->
-      <div class="trust-row">
+      <!-- Badges for credibility -->
+      <div class="trust-row" style="margin-top:16px;">
         <div style="background:#f1f5f9;padding:6px 12px;border-radius:6px;font-size:0.85rem;">Fast Cash</div>
         <div style="background:#f1f5f9;padding:6px 12px;border-radius:6px;font-size:0.85rem;">No Experience Needed</div>
         <div style="background:#f1f5f9;padding:6px 12px;border-radius:6px;font-size:0.85rem;">Safe & Secure</div>
       </div>
 
       <div class="cta">
-        <a class="btn primary" href="https://freecash.com/r/S1TMC" rel="nofollow noopener noreferrer">🎮 Start Playing Now</a>
+        <a class="btn primary" href="https://freecash.com/r/S1TMC" rel="nofollow noopener noreferrer">🎮 Start Playing & Earn Cash</a>
       </div>
       <footer>Rewards vary based on participation. Terms apply.</footer>
     </section>
