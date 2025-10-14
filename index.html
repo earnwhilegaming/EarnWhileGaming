@@ -24,58 +24,63 @@
       background: #fff;
       border-radius: 16px;
       box-shadow: 0 8px 30px rgba(2,6,23,0.08);
-      padding: 32px;
+      overflow: hidden;
     }
     header {
       display: flex;
       gap: 16px;
       align-items: center;
-      margin-bottom: 16px;
+      padding: 32px;
+      background: linear-gradient(135deg,#7c3aed,#06b6d4);
+      border-top-left-radius: 16px;
+      border-top-right-radius: 16px;
+      color: #fff;
+      margin-bottom: 24px;
     }
     .logo {
       width: 64px;
       height: 64px;
       border-radius: 12px;
-      background: linear-gradient(135deg,#7c3aed,#06b6d4);
+      background: #fff;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #fff;
+      color: #7c3aed;
       font-weight: 700;
       font-size: 1.2rem;
     }
     h1 {
-      font-size: 1.7rem;
+      font-size: 2rem;
       margin: 0;
+      line-height: 1.2;
     }
     p.lead {
-      color: #334155;
-      margin: 12px 0 18px;
-    }
-    .trust-row {
-      display: flex;
-      gap: 12px;
-      align-items: center;
-      font-size: 0.9rem;
-      color: #64748b;
-      margin-top: 8px;
+      margin-top: 12px;
+      font-size: 1rem;
+      line-height: 1.4;
+      color: #f1f5f9;
     }
     .features {
       display: grid;
       grid-template-columns: repeat(2,1fr);
       gap: 14px;
-      margin: 20px 0;
+      margin: 20px 32px;
     }
     .feature {
       background: #f1f5f9;
       padding: 12px;
       border-radius: 8px;
       font-size: 0.95rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .feature:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
     }
     .platform-badges {
       display: flex;
       gap: 12px;
-      margin-top: 12px;
+      margin: 0 32px 16px 32px;
       flex-wrap: wrap;
     }
     .platform-badges div {
@@ -83,38 +88,10 @@
       padding: 6px 12px;
       border-radius: 6px;
       font-size: 0.85rem;
+      transition: transform 0.2s ease;
     }
-    .cta {
-      display: flex;
-      gap: 12px;
-      align-items: center;
-      margin-top: 24px;
-    }
-    .btn {
-      padding: 14px 18px;
-      border-radius: 10px;
-      border: 0;
-      font-weight: 600;
-      cursor: pointer;
-      text-decoration: none;
-      transition: background 0.2s ease;
-    }
-    .primary {
-      background: #0ea5a3;
-      color: white;
-      font-size: 1rem;
-    }
-    .primary:hover {
-      background: #0c9898;
-    }
-    .muted {
-      background: transparent;
-      border: 1px solid #e2e8f0;
-    }
-    hr {
-      margin: 24px 0;
-      border: none;
-      border-top: 1px solid #eef2f7;
+    .platform-badges div:hover {
+      transform: scale(1.05);
     }
     ol {
       margin-top: 0;
@@ -123,9 +100,90 @@
     ol li {
       margin-bottom: 10px;
     }
+    .badge-row {
+      display: flex;
+      gap: 12px;
+      margin-top: 16px;
+      margin-left: 32px;
+      margin-right: 32px;
+      flex-wrap: wrap;
+    }
+    .badge-row div {
+      background:#f1f5f9;
+      padding:6px 12px;
+      border-radius:6px;
+      font-size:0.85rem;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+    .badge-row div:hover {
+      transform: scale(1.05);
+      background: #e0f2f1;
+    }
+    .cta {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      margin: 24px 32px;
+    }
+    .btn {
+      padding: 14px 18px;
+      border-radius: 10px;
+      border: 0;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.2s ease;
+      background: linear-gradient(90deg, #0ea5a3, #06b6d4);
+      background-size: 200% 200%;
+      color: #fff;
+      animation: gradientShift 3s ease infinite;
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    hr {
+      margin: 24px 32px;
+      border: none;
+      border-top: 1px solid #eef2f7;
+    }
+    p, footer {
+      margin: 0 32px 16px 32px;
+    }
+    footer {
+      font-size: 0.85rem;
+      color: #64748b;
+      margin-top: 24px;
+    }
+    .social-proof {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      font-size: 0.9rem;
+      color: #64748b;
+      margin: 16px 32px 32px 32px;
+    }
     @media(max-width:520px){
       .features {
         grid-template-columns: 1fr;
+        margin: 20px 16px;
+      }
+      .platform-badges {
+        margin: 0 16px 16px 16px;
+      }
+      .badge-row {
+        margin: 16px;
+      }
+      .cta {
+        margin: 24px 16px;
+      }
+      p, footer, .social-proof {
+        margin-left:16px;
+        margin-right:16px;
       }
     }
   </style>
@@ -139,11 +197,6 @@
         <p class="lead">Discover new games and apps — earn cash you can withdraw via gift cards, crypto, or PayPal for short play sessions.</p>
       </div>
     </header>
-
-    <!-- Trust / Social Proof -->
-    <div class="trust-row">
-      ✅ Trusted by 500,000+ players worldwide
-    </div>
 
     <!-- Platform badges -->
     <div class="platform-badges">
@@ -173,16 +226,22 @@
       </ol>
 
       <!-- Badges for credibility -->
-      <div class="trust-row" style="margin-top:16px;">
-        <div style="background:#f1f5f9;padding:6px 12px;border-radius:6px;font-size:0.85rem;">Fast Cash</div>
-        <div style="background:#f1f5f9;padding:6px 12px;border-radius:6px;font-size:0.85rem;">No Experience Needed</div>
-        <div style="background:#f1f5f9;padding:6px 12px;border-radius:6px;font-size:0.85rem;">Safe & Secure</div>
+      <div class="badge-row">
+        <div>Fast Cash</div>
+        <div>No Experience Needed</div>
+        <div>Safe & Secure</div>
       </div>
 
       <div class="cta">
-        <a class="btn primary" href="https://freecash.com/r/S1TMC" rel="nofollow noopener noreferrer">🎮 Start Playing & Earn Cash</a>
+        <a class="btn" href="https://freecash.com/r/S1TMC" rel="nofollow noopener noreferrer">🎮 Start Playing & Earn Cash</a>
       </div>
+
       <footer>Rewards vary based on participation. Terms apply.</footer>
+
+      <!-- Social proof at the bottom -->
+      <div class="social-proof">
+        ✅ Trusted by 500,000+ players worldwide
+      </div>
     </section>
   </main>
 </body>
