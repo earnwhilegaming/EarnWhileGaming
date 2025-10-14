@@ -3,62 +3,187 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Play Games → Get Paid — Quick Start</title>
+  <title>Play Games → Earn Rewards — Quick Start</title>
   <style>
-    :root{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial;line-height:1.4}
-    body{margin:0;background:#f7fafc;color:#0f172a;display:flex;align-items:center;justify-content:center;padding:24px}
-    .card{max-width:760px;width:100%;background:#fff;border-radius:16px;box-shadow:0 8px 30px rgba(2,6,23,0.08);padding:28px}
-    header{display:flex;gap:16px;align-items:center}
-    .logo{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,#7c3aed,#06b6d4);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700}
-    h1{font-size:1.6rem;margin:0}
-    p.lead{color:#334155;margin:12px 0 18px}
-    .features{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:12px 0}
-    .feature{background:#f1f5f9;padding:10px;border-radius:8px;font-size:0.95rem}
-    .cta{display:flex;gap:12px;align-items:center;margin-top:18px}
-    .btn{padding:12px 16px;border-radius:10px;border:0;font-weight:600;cursor:pointer;text-decoration:none}
-    .primary{background:#0ea5a3;color:white}
-    .muted{background:transparent;border:1px solid #e2e8f0}
-    footer{font-size:0.85rem;color:#64748b;margin-top:18px}
-    pre{background:#0b1220;color:#e6eef8;padding:12px;border-radius:8px;overflow:auto}
-    @media(max-width:520px){.features{grid-template-columns:1fr}}
+    :root {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;
+      line-height: 1.4;
+    }
+    body {
+      margin: 0;
+      background: #f7fafc;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    main {
+      max-width: 760px;
+      width: 100%;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(2,6,23,0.08);
+      padding: 28px;
+    }
+    header {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+    .logo {
+      width: 64px;
+      height: 64px;
+      border-radius: 12px;
+      background: linear-gradient(135deg,#7c3aed,#06b6d4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 700;
+    }
+    h1 {
+      font-size: 1.6rem;
+      margin: 0;
+    }
+    p.lead {
+      color: #334155;
+      margin: 12px 0 18px;
+    }
+    .trust-row {
+      display: flex;
+      gap: 12px;
+      margin-top: 12px;
+      align-items: center;
+      font-size: 0.9rem;
+      color: #64748b;
+    }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      gap: 12px;
+      margin: 12px 0;
+    }
+    .feature {
+      background: #f1f5f9;
+      padding: 10px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+    }
+    .platform-badges {
+      display: flex;
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .platform-badges div {
+      background: #e2e8f0;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+    }
+    .cta {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      margin-top: 18px;
+    }
+    .btn {
+      padding: 12px 16px;
+      border-radius: 10px;
+      border: 0;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s ease;
+    }
+    .primary {
+      background: #0ea5a3;
+      color: white;
+    }
+    .primary:hover {
+      background: #0c9898;
+    }
+    .muted {
+      background: transparent;
+      border: 1px solid #e2e8f0;
+    }
+    footer {
+      font-size: 0.85rem;
+      color: #64748b;
+      margin-top: 18px;
+    }
+    hr {
+      margin: 18px 0;
+      border: none;
+      border-top: 1px solid #eef2f7;
+    }
+    @media(max-width:520px){
+      .features {
+        grid-template-columns: 1fr;
+      }
+      .platform-badges {
+        flex-wrap: wrap;
+      }
+      .trust-row {
+        flex-wrap: wrap;
+      }
+    }
   </style>
 </head>
 <body>
-  <div class="card">
+  <main role="main">
     <header>
       <div class="logo">EWG</div>
       <div>
         <h1>Play Games. Earn Rewards. It’s That Simple.</h1>
-        <p class="lead">Try new games and apps — earn gift cards, crypto, or PayPal cash for short play sessions.</p>
+        <p class="lead">Discover new games and apps — earn points redeemable for gift cards, crypto, or PayPal rewards for short play sessions.</p>
       </div>
     </header>
 
-    <div class="features" aria-hidden>
+    <!-- Trust / Social Proof -->
+    <div class="trust-row">
+      ✅ Trusted by 500,000+ players
+    </div>
+
+    <!-- Platform badges -->
+    <div class="platform-badges">
+      <div>Android</div>
+      <div>iOS</div>
+      <div>PC</div>
+    </div>
+
+    <div class="features">
       <div class="feature">Free to join — works on Android, iOS & PC</div>
-      <div class="feature">Fast payouts — gift cards, PayPal & crypto</div>
+      <div class="feature">Fast redemptions — gift cards, PayPal & crypto</div>
       <div class="feature">No experience required</div>
       <div class="feature">Perfect for students & casual gamers</div>
     </div>
 
-    <p>How it works: you install the game, play for a short time and complete simple tasks. You earn money that's redeemable for cash, crypto, or gift cards. We’ll give you the exact steps after you click.</p>
+    <p>How it works: install a game, play for a short time, and complete simple tasks. You earn points that can be redeemed for gift cards, crypto, or PayPal rewards. Detailed instructions appear after you click below.</p>
 
-    <hr style="margin:18px 0;border:none;border-top:1px solid #eef2f7">
-    
+    <hr>
+
     <section id="how">
       <h2 style="margin-top:18px">Quick Steps</h2>
       <ol>
-        <li>Click Start Playing Now → select & install one of the games</li>
-        <li>Open the game and play 5–15 minutes</li>
-        <li>Complete 1–2 simple tasks (watch an ad, reach level 1)</li>
-        <li>Claim rewards in the app — redeem for gift cards, crypto or PayPal cash</li>
+        <li>📥 Click "Start Playing Now" → select & install a game</li>
+        <li>🎮 Open the game and play 5–15 minutes</li>
+        <li>🏆 Complete 1–2 simple tasks (watch an ad, reach level 1)</li>
+        <li>🎁 Claim points in the app — redeem for gift cards, crypto, or PayPal rewards</li>
       </ol>
 
-      <div class="cta">
-        <a class="btn primary" href="https://freecash.com/r/S1TMC">🎮 Start Playing Now</a>
+      <!-- Additional badges for credibility -->
+      <div class="trust-row">
+        <div style="background:#f1f5f9;padding:6px 12px;border-radius:6px;font-size:0.85rem;">Fast Rewards</div>
+        <div style="background:#f1f5f9;padding:6px 12px;border-radius:6px;font-size:0.85rem;">No Experience Needed</div>
+        <div style="background:#f1f5f9;padding:6px 12px;border-radius:6px;font-size:0.85rem;">Safe & Secure</div>
       </div>
 
+      <div class="cta">
+        <a class="btn primary" href="https://freecash.com/r/S1TMC" rel="nofollow noopener noreferrer">🎮 Start Playing Now</a>
+      </div>
+      <footer>Rewards vary based on participation. Terms apply.</footer>
     </section>
-
-  </div>
+  </main>
 </body>
 </html>
