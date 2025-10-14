@@ -59,10 +59,7 @@
       transform: translateY(20px);
       transition: all 0.8s ease;
     }
-    .features.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .features.visible { opacity: 1; transform: translateY(0); }
     .feature {
       background: #f1f5f9;
       padding: 12px;
@@ -83,10 +80,7 @@
       transform: translateY(20px);
       transition: all 0.8s ease;
     }
-    .platform-badges.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .platform-badges.visible { opacity: 1; transform: translateY(0); }
     .platform-badges div {
       background: #e2e8f0;
       padding: 6px 12px;
@@ -94,9 +88,7 @@
       font-size: 0.85rem;
       transition: transform 0.2s ease;
     }
-    .platform-badges div:hover {
-      transform: scale(1.05);
-    }
+    .platform-badges div:hover { transform: scale(1.05); }
     ol {
       margin-top: 0;
       padding-left: 40px;
@@ -104,13 +96,8 @@
       transform: translateY(20px);
       transition: all 0.8s ease;
     }
-    ol.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    ol li {
-      margin-bottom: 10px;
-    }
+    ol.visible { opacity: 1; transform: translateY(0); }
+    ol li { margin-bottom: 10px; }
     .badge-row {
       display: flex;
       gap: 12px;
@@ -122,10 +109,7 @@
       transform: translateY(20px);
       transition: all 0.8s ease;
     }
-    .badge-row.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .badge-row.visible { opacity: 1; transform: translateY(0); }
     .badge-row div {
       background:#f1f5f9;
       padding:6px 12px;
@@ -133,10 +117,7 @@
       font-size:0.85rem;
       transition: transform 0.2s ease, background 0.2s ease;
     }
-    .badge-row div:hover {
-      transform: scale(1.05);
-      background: #e0f2f1;
-    }
+    .badge-row div:hover { transform: scale(1.05); background: #e0f2f1; }
     .cta {
       display: flex;
       gap: 12px;
@@ -146,10 +127,7 @@
       transform: translateY(20px);
       transition: all 0.8s ease;
     }
-    .cta.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .cta.visible { opacity: 1; transform: translateY(0); }
     .btn {
       padding: 14px 18px;
       border-radius: 10px;
@@ -163,9 +141,7 @@
       color: #fff;
       animation: gradientShift 3s ease infinite;
     }
-    .btn:hover {
-      transform: translateY(-2px);
-    }
+    .btn:hover { transform: translateY(-2px); }
     @keyframes gradientShift {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
@@ -176,9 +152,7 @@
       border: none;
       border-top: 1px solid #eef2f7;
     }
-    p, footer {
-      margin: 0 32px 16px 32px;
-    }
+    p, footer { margin: 0 32px 16px 32px; }
     footer {
       font-size: 0.85rem;
       color: #64748b;
@@ -195,17 +169,18 @@
       transform: translateY(20px);
       transition: all 0.8s ease;
     }
-    .social-proof.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .social-proof.visible { opacity: 1; transform: translateY(0); }
+
     @media(max-width:520px){
-      .features { grid-template-columns: 1fr; margin: 20px 16px; }
-      .platform-badges { margin: 0 16px 16px 16px; }
-      .badge-row { margin: 16px; }
-      .cta { margin: 24px 16px; }
-      p, footer, .social-proof { margin-left:16px; margin-right:16px; }
-      ol { padding-left: 30px; }
+      h1 { font-size: 1.6rem; }
+      p.lead { font-size: 0.95rem; }
+      .features { grid-template-columns: 1fr; margin: 16px; gap: 12px; }
+      .platform-badges { margin: 0 16px 12px 16px; }
+      .badge-row { margin: 12px; gap: 10px; }
+      .cta { margin: 16px; justify-content: center; }
+      p, footer, .social-proof { margin-left:16px; margin-right:16px; font-size: 0.85rem; }
+      ol { padding-left: 30px; font-size: 0.95rem; }
+      .btn { padding: 12px 16px; font-size: 0.95rem; }
     }
   </style>
 </head>
@@ -229,30 +204,31 @@
       <div class="feature">Ideal for students & casual gamers</div>
     </div>
 
-<ol id="steps">
-  <h2>Quick Steps</h2>
-  <li>📥 Click "Start Playing Now" → select & install a game</li>
-  <li>🎮 Open the game and play 5–15 minutes</li>
-  <li>🏆 Complete 1–2 simple tasks (watch an ad, reach level 1)</li>
-  <li>🎁 Claim your cash in the app — withdraw via gift cards, crypto, or PayPal</li>
-</ol>
+    <section id="how">
+      <h2>Quick Steps</h2>
+      <ol id="steps">
+        <li>📥 Click "Start Playing Now" → select & install a game</li>
+        <li>🎮 Open the game and play 5–15 minutes</li>
+        <li>🏆 Complete 1–2 simple tasks (watch an ad, reach level 1)</li>
+        <li>🎁 Claim your cash in the app — withdraw via gift cards, crypto, or PayPal</li>
+      </ol>
 
+      <div class="badge-row" id="badgesRow">
+        <div>Fast Cash</div>
+        <div>No Experience Needed</div>
+        <div>Safe & Secure</div>
+      </div>
 
-    <div class="badge-row" id="badgesRow">
-      <div>Fast Cash</div>
-      <div>No Experience Needed</div>
-      <div>Safe & Secure</div>
-    </div>
+      <div class="cta" id="cta">
+        <a class="btn" href="https://freecash.com/r/S1TMC" rel="nofollow noopener noreferrer">🎮 Start Playing & Earn Cash</a>
+      </div>
 
-    <div class="cta" id="cta">
-      <a class="btn" href="https://freecash.com/r/S1TMC" rel="nofollow noopener noreferrer">🎮 Start Playing & Earn Cash</a>
-    </div>
+      <footer>Rewards vary based on participation. Terms apply.</footer>
 
-    <footer>Rewards vary based on participation. Terms apply.</footer>
-
-    <div class="social-proof" id="socialProof">
-      ✅ Trusted by 500,000+ players worldwide
-    </div>
+      <div class="social-proof" id="socialProof">
+        ✅ Trusted by 500,000+ players worldwide
+      </div>
+    </section>
   </main>
 
   <script>
