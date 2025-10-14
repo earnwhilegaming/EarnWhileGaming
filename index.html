@@ -36,18 +36,8 @@
       border-top-right-radius: 16px;
       color: #fff;
       margin-bottom: 24px;
-    }
-    .logo {
-      width: 64px;
-      height: 64px;
-      border-radius: 12px;
-      background: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #7c3aed;
-      font-weight: 700;
-      font-size: 1.2rem;
+      flex-direction: column;
+      text-align: center;
     }
     h1 {
       font-size: 2rem;
@@ -65,6 +55,13 @@
       grid-template-columns: repeat(2,1fr);
       gap: 14px;
       margin: 20px 32px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease;
+    }
+    .features.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
     .feature {
       background: #f1f5f9;
@@ -82,6 +79,13 @@
       gap: 12px;
       margin: 0 32px 16px 32px;
       flex-wrap: wrap;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease;
+    }
+    .platform-badges.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
     .platform-badges div {
       background: #e2e8f0;
@@ -95,7 +99,14 @@
     }
     ol {
       margin-top: 0;
-      padding-left: 20px;
+      padding-left: 40px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease;
+    }
+    ol.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
     ol li {
       margin-bottom: 10px;
@@ -107,6 +118,13 @@
       margin-left: 32px;
       margin-right: 32px;
       flex-wrap: wrap;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease;
+    }
+    .badge-row.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
     .badge-row div {
       background:#f1f5f9;
@@ -124,6 +142,13 @@
       gap: 12px;
       align-items: center;
       margin: 24px 32px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease;
+    }
+    .cta.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
     .btn {
       padding: 14px 18px;
@@ -166,83 +191,81 @@
       font-size: 0.9rem;
       color: #64748b;
       margin: 16px 32px 32px 32px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease;
+    }
+    .social-proof.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
     @media(max-width:520px){
-      .features {
-        grid-template-columns: 1fr;
-        margin: 20px 16px;
-      }
-      .platform-badges {
-        margin: 0 16px 16px 16px;
-      }
-      .badge-row {
-        margin: 16px;
-      }
-      .cta {
-        margin: 24px 16px;
-      }
-      p, footer, .social-proof {
-        margin-left:16px;
-        margin-right:16px;
-      }
+      .features { grid-template-columns: 1fr; margin: 20px 16px; }
+      .platform-badges { margin: 0 16px 16px 16px; }
+      .badge-row { margin: 16px; }
+      .cta { margin: 24px 16px; }
+      p, footer, .social-proof { margin-left:16px; margin-right:16px; }
+      ol { padding-left: 30px; }
     }
   </style>
 </head>
 <body>
   <main role="main">
     <header>
-      <div class="logo">EWG</div>
-      <div>
-        <h1>Play Games. Earn Cash. It’s That Simple.</h1>
-        <p class="lead">Discover new games and apps — earn cash you can withdraw via gift cards, crypto, or PayPal for short play sessions.</p>
-      </div>
+      <h1>Play Games. Earn Cash. It’s That Simple.</h1>
+      <p class="lead">Discover new games and apps — earn cash you can withdraw via gift cards, crypto, or PayPal for short play sessions.</p>
     </header>
 
-    <!-- Platform badges -->
-    <div class="platform-badges">
+    <div class="platform-badges" id="badges">
       <div>Android</div>
       <div>iOS</div>
       <div>PC</div>
     </div>
 
-    <div class="features">
+    <div class="features" id="features">
       <div class="feature">Free to join — works on all devices</div>
       <div class="feature">Fast cash withdrawals — gift cards, PayPal & crypto</div>
       <div class="feature">No experience required</div>
       <div class="feature">Ideal for students & casual gamers</div>
     </div>
 
-    <p>How it works: install a game, play for a short time, and complete simple tasks. Earn cash that can be withdrawn via gift cards, crypto, or PayPal. Detailed instructions appear after you click below.</p>
+    <ol id="steps">
+      <li>📥 Click "Start Playing Now" → select & install a game</li>
+      <li>🎮 Open the game and play 5–15 minutes</li>
+      <li>🏆 Complete 1–2 simple tasks (watch an ad, reach level 1)</li>
+      <li>🎁 Claim your cash in the app — withdraw via gift cards, crypto, or PayPal</li>
+    </ol>
 
-    <hr>
+    <div class="badge-row" id="badgesRow">
+      <div>Fast Cash</div>
+      <div>No Experience Needed</div>
+      <div>Safe & Secure</div>
+    </div>
 
-    <section id="how">
-      <h2>Quick Steps</h2>
-      <ol>
-        <li>📥 Click "Start Playing Now" → select & install a game</li>
-        <li>🎮 Open the game and play 5–15 minutes</li>
-        <li>🏆 Complete 1–2 simple tasks (watch an ad, reach level 1)</li>
-        <li>🎁 Claim your cash in the app — withdraw via gift cards, crypto, or PayPal</li>
-      </ol>
+    <div class="cta" id="cta">
+      <a class="btn" href="https://freecash.com/r/S1TMC" rel="nofollow noopener noreferrer">🎮 Start Playing & Earn Cash</a>
+    </div>
 
-      <!-- Badges for credibility -->
-      <div class="badge-row">
-        <div>Fast Cash</div>
-        <div>No Experience Needed</div>
-        <div>Safe & Secure</div>
-      </div>
+    <footer>Rewards vary based on participation. Terms apply.</footer>
 
-      <div class="cta">
-        <a class="btn" href="https://freecash.com/r/S1TMC" rel="nofollow noopener noreferrer">🎮 Start Playing & Earn Cash</a>
-      </div>
-
-      <footer>Rewards vary based on participation. Terms apply.</footer>
-
-      <!-- Social proof at the bottom -->
-      <div class="social-proof">
-        ✅ Trusted by 500,000+ players worldwide
-      </div>
-    </section>
+    <div class="social-proof" id="socialProof">
+      ✅ Trusted by 500,000+ players worldwide
+    </div>
   </main>
+
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {threshold: 0.2});
+
+    ['features','badges','steps','badgesRow','cta','socialProof'].forEach(id => {
+      observer.observe(document.getElementById(id));
+    });
+  </script>
 </body>
 </html>
